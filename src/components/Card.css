@@ -1,0 +1,78 @@
+.profile-card {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 400px;
+  height: 250px;
+  z-index: 0;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.card-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-top: 50px;
+}
+
+.card-title {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.creator-name {
+  color: rgb(69, 122, 238);
+  margin: 0;
+}
+
+.edit-link {
+  position: absolute;
+  right: 32px;
+  top: 10px;
+}
+.edit-button {
+  background-color: rgb(179, 175, 170);
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 2px;
+  width: 16px;
+  height: 16px;
+}
+
+.edit-icon {
+  width: 14px;
+}
+
+.social-media-links {
+  text-align: center;
+  width: 84%;
+  margin-top: 10px;
+}
+
+.social-media-links > a {
+  margin-right: 8px;
+}
+
+.media-icon {
+  width: 24px;
+}
+
+.creator-description {
+  width: 84%;
+}
