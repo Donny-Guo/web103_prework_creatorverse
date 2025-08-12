@@ -1,0 +1,63 @@
+.add-creator-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.background-div {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  left: 0;
+  right: 0;
+  background-image: url("/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: -1;
+}
+
+.add-creator-section > h1{
+  color: white;
+}
+
+.input-div {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.input-div > h2 {
+  margin: 0;
+}
+
+.input-element {
+  background-color: white;
+  color: black;
+  height: 30px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 5px;
+}
+
+.textarea-element {
+  background-color: white;
+  color: black;
+  font-family: inherit;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 5px;
+}
+
+.button-div {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.create-button {
+  background-color: rgb(54, 93, 235);
+}

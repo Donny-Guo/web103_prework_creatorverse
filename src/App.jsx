@@ -9,10 +9,13 @@ function App() {
       <header>
         <h1>Creatorverse</h1>
         <div>
-          <button className='home-page-button'>
-            VIEW ALL CREATORS
-          </button>
-          <Link>
+          <Link to="/">
+            <button className='home-page-button'>
+              VIEW ALL CREATORS
+            </button>
+          </Link>
+          
+          <Link to="/new">
             <button className='home-page-button'>
               ADD A CREATOR
             </button>
