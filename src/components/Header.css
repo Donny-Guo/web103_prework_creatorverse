@@ -1,0 +1,13 @@
+.header-section {
+  width: 100%;
+  padding-left: 80px;
+  margin-top: 20px;
+}
+
+.home-link {
+  color: white;
+}
+
+.home-link:hover {
+  color: rgb(30, 30, 229);
+}

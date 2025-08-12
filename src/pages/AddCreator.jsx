@@ -1,11 +1,39 @@
 import "./AddCreator.css"
 import { useState, useEffect } from 'react'
+import supabase from "../client.js"
+import Header from "../components/Header.jsx"
 
 export default function AddCreator() {
+  const [inputData, setInputData] = useState({name: "", description: "", imageURL: "", youtubeLink: "", twitterLink: "", instagramLink: ""})
+
+  const handleChange = (e) => {
+    setInputData(prev => (
+      {
+        ...prev,
+        [e.target.name]: e.target.value,
+      }
+    ))
+  }
+
+  const handleCreate = async () => {
+    const {name, description, imageURL: image_url, youtubeLink: youtube_link, twitterLink: twitter_link, instagramLink: instagram_link} = inputData;
+    await supabase.from('creators')
+      .insert({
+        name,
+        description,
+        image_url,
+        youtube_link,
+        twitter_link,
+        instagram_link
+      })
+    setInputData({ name: "", description: "", imageURL: "", youtubeLink: "", twitterLink: "", instagramLink: "" })
+    window.location = "/"
+  }
 
   return (
     <section className="add-creator-section">
       <div className="background-div"></div>
+      <Header />
       <h1>
         ADD A CREATOR
       </h1>
@@ -17,6 +45,9 @@ export default function AddCreator() {
           type='text'
           placeholder="Your Creator Name"
           className="input-element"
+          name="name"
+          value={inputData.name}
+          onChange={handleChange}
         />
       </div>
 
@@ -29,6 +60,9 @@ export default function AddCreator() {
           placeholder="Your Creator Description"
           className="textarea-element"
           rows="5"
+          name="description"
+          value={inputData.description}
+          onChange={handleChange}
         />
       </div>
 
@@ -40,6 +74,9 @@ export default function AddCreator() {
           type='text'
           placeholder="Your Creator Image URL"
           className="input-element"
+          name="imageURL"
+          value={inputData.imageURL}
+          onChange={handleChange}
         />
       </div>
 
@@ -51,6 +88,9 @@ export default function AddCreator() {
           type='text'
           placeholder="Youtube Link (Optional)"
           className="input-element"
+          name="youtubeLink"
+          value={inputData.youtubeLink}
+          onChange={handleChange}
         />
       </div>
 
@@ -62,6 +102,9 @@ export default function AddCreator() {
           type='text'
           placeholder="Twitter Link (Optional)"
           className="input-element"
+          name="twitterLink"
+          value={inputData.twitterLink}
+          onChange={handleChange}
         />
       </div>
 
@@ -73,11 +116,14 @@ export default function AddCreator() {
           type='text'
           placeholder="Instagram Link (Optional)"
           className="input-element"
+          name="instagramLink"
+          value={inputData.instagramLink}
+          onChange={handleChange}
         />
       </div>
 
       <div className="button-div">
-        <button className="create-button">
+        <button className="create-button" onClick={handleCreate}>
           Create
         </button>
       </div>

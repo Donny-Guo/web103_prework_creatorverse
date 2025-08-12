@@ -3,8 +3,9 @@ import { Link } from "react-router-dom"
 import editIcon from "/edit.png"
 import youtubeIcon from "/youtube.png"
 import instagramIcon from "/instagram.png"
+import twitterIcon from "/twitter.png"
 
-export default function Card({imageURL}) {
+export default function Card({name, description, imageURL, youtubeLink, twitterLink, instagramLink}) {
   const containerStyle = {
     backgroundImage: imageURL ? `url(${imageURL})` : "none",
   }
@@ -14,7 +15,7 @@ export default function Card({imageURL}) {
       <div className="card-content">
         <div className="card-title">
           <h2 className="creator-name">
-            Lex Fridman
+            {name}
           </h2>
           <Link className="edit-link">
             <button className="edit-button">
@@ -24,17 +25,21 @@ export default function Card({imageURL}) {
         </div>
         
         <div className="social-media-links">
-          <a href="https://youtube.com">
+          <a href={youtubeLink} target="_blank">
             <img src={youtubeIcon} className="media-icon"/>
           </a>
 
-          <a href="https://instagram.com">
+          <a href={twitterLink} target="_blank">
+            <img src={twitterIcon} className="media-icon" />
+          </a>
+
+          <a href={instagramLink} target="_blank">
             <img src={instagramIcon} className="media-icon"/>
           </a>
         </div>
 
         <p className="creator-description">
-          AI researcher working on autonomous vehicles, human-robot interaction, and machine learning at MIT and beyond.
+          {description}
         </p>
       </div>
     </div>
