@@ -4,3 +4,8 @@
   flex-wrap: wrap;
   margin: 20px;
 }
+
+.creator-card-link,
+.creator-card-link:hover {
+  color: inherit;
+}

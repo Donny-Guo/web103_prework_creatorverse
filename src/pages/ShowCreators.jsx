@@ -2,6 +2,7 @@ import "./ShowCreators.css"
 import Card from "../components/Card"
 import supabase from "../client"
 import { useState, useEffect } from 'react'
+import { Link } from "react-router-dom"
 
 export default function ShowCreators() {
   const [creatorsData, setCreatorsData] = useState([])
@@ -38,10 +39,16 @@ export default function ShowCreators() {
       instagramLink
     }
     return (
-      <Card
-        key={creator.name}
-        {...cardData}
-      />
+      <Link
+        key={id}
+        to={`/creator/${id}`}
+        className="creator-card-link"
+      >
+        <Card
+          {...cardData}
+        />
+      </Link>
+      
     )
   })
   return (

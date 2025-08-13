@@ -6,9 +6,7 @@ import "./EditCreator.css"
 
 export default function EditCreator() {
   const { id } = useParams();
-  console.log("id: ", id);
   const [creatorData, setCreatorData] = useState(null);
-  console.log("creeator data:", creatorData)
   useEffect(() => {
     const fetchData = async () => {
       const { data, error } = await supabase
