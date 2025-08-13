@@ -1,4 +1,5 @@
-.add-creator-section {
+.add-creator-section,
+.update-creator-section {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -59,6 +60,7 @@
   margin-top: 20px;
 }
 
-.create-button {
+.create-button,
+.update-button {
   background-color: rgb(54, 93, 235);
 }

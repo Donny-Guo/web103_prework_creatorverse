@@ -18,7 +18,9 @@ export default function ShowCreators() {
 
   console.log("creators data: ", creatorsData);
   const creatorElements = creatorsData.map((creator) => {
-    const {name, 
+    const {
+      id,
+      name, 
       description, 
       image_url: imageURL, 
       youtube_link: youtubeLink,
@@ -27,6 +29,7 @@ export default function ShowCreators() {
     } = creator;
 
     const cardData = {
+      id,
       name,
       description,
       imageURL,

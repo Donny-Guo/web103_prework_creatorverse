@@ -5,7 +5,7 @@ import youtubeIcon from "/youtube.png"
 import instagramIcon from "/instagram.png"
 import twitterIcon from "/twitter.png"
 
-export default function Card({name, description, imageURL, youtubeLink, twitterLink, instagramLink}) {
+export default function Card({id, name, description, imageURL, youtubeLink, twitterLink, instagramLink}) {
   const containerStyle = {
     backgroundImage: imageURL ? `url(${imageURL})` : "none",
   }
@@ -17,7 +17,7 @@ export default function Card({name, description, imageURL, youtubeLink, twitterL
           <h2 className="creator-name">
             {name}
           </h2>
-          <Link className="edit-link">
+          <Link className="edit-link" to={`/edit/${id}`}>
             <button className="edit-button">
               <img src={editIcon} className="edit-icon"/>
             </button>
