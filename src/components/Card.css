@@ -76,6 +76,12 @@
   width: 24px;
 }
 
-.creator-description {
+.creator-card-link {
+  text-align: center;
   width: 84%;
+  margin-top: 10px;
+}
+.creator-card-link,
+.creator-card-link:hover {
+  color: inherit;
 }

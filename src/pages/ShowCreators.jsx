@@ -4,7 +4,7 @@ import supabase from "../client"
 import { useState, useEffect } from 'react'
 import { Link } from "react-router-dom"
 
-export default function ShowCreators() {
+export default function ShowCreators({ref}) {
   const [creatorsData, setCreatorsData] = useState([])
 
   useEffect(() => {
@@ -21,9 +21,9 @@ export default function ShowCreators() {
   const creatorElements = creatorsData.map((creator) => {
     const {
       id,
-      name, 
-      description, 
-      image_url: imageURL, 
+      name,
+      description,
+      image_url: imageURL,
       youtube_link: youtubeLink,
       twitter_link: twitterLink,
       instagram_link: instagramLink,
@@ -39,21 +39,19 @@ export default function ShowCreators() {
       instagramLink
     }
     return (
-      <Link
+
+      <Card
         key={id}
-        to={`/creator/${id}`}
-        className="creator-card-link"
-      >
-        <Card
-          {...cardData}
-        />
-      </Link>
-      
+        {...cardData}
+      />
+
+
     )
   })
   return (
-    <section className="show-creators-section">
-      {creatorElements}
+    <section className="show-creators-section" ref={ref}>
+      {creatorsData.length > 0 ? creatorElements
+        : "You don't have any creators yet. Create one!"}
     </section>
   )
 }
